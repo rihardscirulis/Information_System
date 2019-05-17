@@ -27,7 +27,7 @@
 	
     # Veidojam savienojumu ar serveri un datu bazi
     $technical = mysqli_connect('localhost','root','','technical_data') or die('Cant connect to the database');
-	$fundamental = mysqli_connect('localhost','root','','fundamental_data') or die('Cant connect to the database');
+	//$fundamental = mysqli_connect('localhost','root','','fundamental_data') or die('Cant connect to the database');
     $chs_technical = mysqli_set_charset($technical, "utf8");
 	$chs_fundamental = mysqli_set_charset($fundamental, "utf8");
 ?>
