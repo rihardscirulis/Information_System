@@ -1,0 +1,86 @@
+/* Grid container main menu buttons format */
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	padding: 10px;
+}
+
+.grid-item {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+/* ======================================= */
+
+/* Primary class main menu buttons */
+.buttonMainMenu {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+/* =============================== */
+
+/* Primary class back button */
+.buttonBack {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+/* ========================= */
+
+/* Secondary class main menu buttons */
+.buttonIndex_PHP {
+	background-color: white; 
+	color: black; 
+	border: 2px solid #4CAF50;
+	border-radius: 12px;
+}
+
+.buttonIndex_PHP:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+/* ================================= */
+
+/* Secondary class back to menu button */
+.buttonBackToMenu {
+	background-color: white; 
+	color: black; 
+	border: 2px solid #4CAF50;
+	border-radius: 12px;
+}
+
+.buttonBackToMenu:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+/* ============================= */
+
+/* Header format */
+h1 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+/* ============= */
