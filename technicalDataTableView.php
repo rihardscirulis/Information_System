@@ -84,16 +84,20 @@ responsive: {
 			echo "<a href = 'index.php'><button class = 'buttonBack buttonBackToMenu'>Back to main menu</button></a>";
 			$sql = "SELECT * FROM technical_data WHERE Ticket = 'YUM'";
 			echo "<!-- $sql --!>";
-			$sql_res = mysqli_query($technical, $sql) or die("<h1>".mysqli_error()."</h1>");
+			$sql_chart = mysqli_query($technical, $sql) or die("<h1>".mysqli_error()."</h1>");
+			$sql_table = mysqli_query($technical, $sql) or die("<h1>".mysqli_error()."</h1>");
+			table($sql_table);
 			$array = array();
 
-			while($row = mysqli_fetch_assoc($sql_res)) {
+			while($row = mysqli_fetch_assoc($sql_chart)) {
 				$array[] = floatval(str_replace(',', '.', $row['Technical_value']));
 		
 			}
 
 			$array = json_encode($array);
+			
 			echo "<script>drawChart($array);</script>";
+			
 		?>
 	</body>
 	
