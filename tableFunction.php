@@ -20,7 +20,6 @@
         }
         echo "</table>";
         $row_cnt = mysqli_num_rows($sql_res);
-        printf("<br><center>Result is <b>%d</b> rows. </center>\n", $row_cnt);
         # Aizvēr rezultāta darbību
         mysqli_free_result($sql_res); 
     }

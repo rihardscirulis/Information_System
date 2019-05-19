@@ -15,7 +15,7 @@
 				<div class = "grid-item"><button class = "buttonMainMenu buttonIndex_PHP">EDGAR data</button></div>
 				<div class = "grid-item"><a href = "fundamentalDataTableView.php"><button class = "buttonMainMenu buttonIndex_PHP">Fundamental data</button></a></div>
 				<div class = "grid-item"><a href = "technicalDataTableView.php"><button class = "buttonMainMenu buttonIndex_PHP">Technical data</button></a></div>
-				<div class = "grid-item"><button class = "buttonMainMenu buttonIndex_PHP">Charts</button></div>
+				<div class = "grid-item"><a href = "chartInformation.php"><button class = "buttonMainMenu buttonIndex_PHP">Charts</button></a></div>
 				<div class = "grid-item"><button class = "buttonMainMenu buttonIndex_PHP">Screening data</button></div>
 				<div class = "grid-item"><button class = "buttonMainMenu buttonIndex_PHP">Optimization data</button></div>
 				<div class = "grid-item"><button class = "buttonMainMenu buttonIndex_PHP">Portfolio test data</button></div>
