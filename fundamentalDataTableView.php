@@ -26,7 +26,7 @@
 			# Fundamental data table view
 			echo "<h3>Fundamental data table</h3>";
 			echo "<a href = 'index.php'><button class = 'buttonBack buttonBackToMenu'>Back to main menu</button></a>";
-			$sql = "SELECT * FROM fundamental_data WHERE Period = 'Q1'";
+			$sql = "SELECT * FROM fundamental_data";
 			echo "<!-- $sql --!>";
 			$sql_res = mysqli_query($fundamental, $sql) or die("<h1>".mysqli_error()."</h1>");
 			table($sql_res);

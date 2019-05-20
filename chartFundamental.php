@@ -14,18 +14,40 @@
 	</head>
 	<body>
 		<h1>Charts</h1>
-		<a href = 'fundamentalDataTableView.php'><button class = 'buttonBack buttonBackToMenu'>Back to technical data table</button></a><br>
+		<a href = 'fundamentalDataTableView.php'><button class = 'buttonBack buttonBackToMenu'>Back to fundamental data table</button></a><br>
 		<a href = 'index.php'><button class = 'buttonBack buttonBackToMenu'>Back to main menu</button></a>
 		<h3>Tickets Price</h3>
 		<div id="chartPrice">
 			
 		</div>
+		<br>
 		<h3>Tickets SP500</h3>
 		<div id="chartSP500">
 	
 		</div>
+		<br>
 		<h3>Tickets Shares</h3>
 		<div id="chartShares">
+		
+		</div>
+		<br>
+		<h3>Tickets Sales</h3>
+		<div id="chartSales">
+		
+		</div>
+		<br>
+		<h3>Tickets EPS(D)</h3>
+		<div id="chartEPS_D">
+		
+		</div>
+		<br>
+		<h3>Tickets Equity</h3>
+		<div id="chartEquity">
+		
+		</div>
+		<br>
+		<h3>Tickets Cash</h3>
+		<div id="chartCash">
 		
 		</div>
 		<?php
@@ -140,7 +162,67 @@
 			$array = json_encode($array);
 			
 			echo "<script>drawChartTechnical($array, chartShares);</script>";
-			#
+			# ========================================
+			
+			# Fundamental datas tickets chart - Sales
+			$sql = "SELECT * FROM fundamental_data WHERE Symbol = '$symbolValue' AND Period = 'Q1'";
+			echo "<!-- $sql --!>";
+			$sql_chart = mysqli_query($fundamental, $sql) or die("<h1>".mysqli_error()."</h1>");
+			$array = array();
+
+			while($row = mysqli_fetch_assoc($sql_chart)) {
+				$array[] = floatval(str_replace(',', '.', $row['Sales']));
+			}
+
+			$array = json_encode($array);
+			
+			echo "<script>drawChartTechnical($array, chartSales);</script>";
+			# ========================================
+			
+			# Fundamental datas tickets chart - EPS(D)
+			$sql = "SELECT * FROM fundamental_data WHERE Symbol = '$symbolValue' AND Period = 'Q1'";
+			echo "<!-- $sql --!>";
+			$sql_chart = mysqli_query($fundamental, $sql) or die("<h1>".mysqli_error()."</h1>");
+			$array = array();
+
+			while($row = mysqli_fetch_assoc($sql_chart)) {
+				$array[] = floatval(str_replace(',', '.', $row['EPS_D']));
+			}
+
+			$array = json_encode($array);
+			
+			echo "<script>drawChartTechnical($array, chartEPS_D);</script>";
+			# ========================================
+			
+			# Fundamental datas tickets chart - Equity
+			$sql = "SELECT * FROM fundamental_data WHERE Symbol = '$symbolValue' AND Period = 'Q1'";
+			echo "<!-- $sql --!>";
+			$sql_chart = mysqli_query($fundamental, $sql) or die("<h1>".mysqli_error()."</h1>");
+			$array = array();
+
+			while($row = mysqli_fetch_assoc($sql_chart)) {
+				$array[] = floatval(str_replace(',', '.', $row['Equity']));
+			}
+
+			$array = json_encode($array);
+			
+			echo "<script>drawChartTechnical($array, chartEquity);</script>";
+			# ========================================
+			
+			# Fundamental datas tickets chart - Cash
+			$sql = "SELECT * FROM fundamental_data WHERE Symbol = '$symbolValue' AND Period = 'Q1'";
+			echo "<!-- $sql --!>";
+			$sql_chart = mysqli_query($fundamental, $sql) or die("<h1>".mysqli_error()."</h1>");
+			$array = array();
+
+			while($row = mysqli_fetch_assoc($sql_chart)) {
+				$array[] = floatval(str_replace(',', '.', $row['Cash']));
+			}
+
+			$array = json_encode($array);
+			
+			echo "<script>drawChartTechnical($array, chartCash);</script>";
+			# ========================================
 		?>
 	</body>
 </html>
