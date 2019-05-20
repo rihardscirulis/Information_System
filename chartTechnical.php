@@ -21,11 +21,11 @@
 			$ticketValue = $_GET['Ticket'];
 		?>
 		<script type="text/javascript">
-		function drawChart(dataArray){
+		function drawChartTechnical(dataArray){
 				console.log(dataArray);
 				Highcharts.chart('chart', {
 				title: {
-					text: '<?php echo "Tickets chart: $ticketValue"; ?>'
+					text: '<?php echo "Technical tickets chart: $ticketValue"; ?>'
 				},
 
 				subtitle: {
@@ -72,26 +72,25 @@
 					}]
 				}
 				});
-			}		
+			}
+			
+			
 			</script>
 		<?php
 			$ticketValue = $_GET['Ticket'];
-	
+			
 			if (version_compare(phpversion(), '7.1', '>=')) {
 				ini_set( 'precision', 14 );
 				ini_set( 'serialize_precision', -1 );
 			}
 			
 			require "tableFunction.php";
-			# Tehnisko datu tabula
+			# Tehnisko datu grafikas iegūšana un attēlošana
 			echo "<a href = 'technicalDataTableView.php'><button class = 'buttonBack buttonBackToMenu'>Back to technical data table</button></a><br>";
 			echo "<a href = 'index.php'><button class = 'buttonBack buttonBackToMenu'>Back to main menu</button></a>";
 			$sql = "SELECT * FROM technical_data WHERE Ticket = '$ticketValue'";
 			echo "<!-- $sql --!>";
 			$sql_chart = mysqli_query($technical, $sql) or die("<h1>".mysqli_error()."</h1>");
-			echo "<div class = 'grid-container'>";
-			echo "<div class = grid-item>";
-			echo "</div>";
 			$array = array();
 
 			while($row = mysqli_fetch_assoc($sql_chart)) {
@@ -100,7 +99,7 @@
 
 			$array = json_encode($array);
 				
-			echo "<script>drawChart($array);</script>";
+			echo "<script>drawChartTechnical($array);</script>";
 		?>
 	</body>
 </html>

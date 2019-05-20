@@ -49,10 +49,10 @@
 				echo "<div class = grid-item>";
 				if ($result->num_rows > 0) {
 					// output data of each row
-					echo "<form method = 'get' action='chart.php'>";
+					echo "<form method = 'get' action='chartTechnical.php'>";
 					while($row = $result->fetch_assoc()) {
 						$table_name = $row['Ticket'];
-						echo "<a href = 'chart.php'><input type='submit' name='Ticket' value='$table_name' /> </a><br><br>";
+						echo "<a href = 'chartTechnical.php'><input type='submit' name='Ticket' value='$table_name' /> </a><br><br>";
 					}
 					echo "</form>";
 				}
